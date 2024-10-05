@@ -1,9 +1,10 @@
-import { Hono } from "hono";
+import app from "./app";
 
-const app = new Hono();
+const port = process.env.PORT || 3000;
+// eslint-disable-next-line no-console
+console.log(`Server is running on port http://localhost:${port}`);
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
-
-export default app;
+export default {
+  port,
+  fetch: app.fetch,
+};
