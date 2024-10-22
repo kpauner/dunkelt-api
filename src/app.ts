@@ -1,5 +1,7 @@
 import createApp from "@/lib/create-app";
 
+import configureOpenAPI from "./lib/configure-open-api";
+
 const app = createApp();
 
 app.get("/", (c) => {
@@ -11,5 +13,7 @@ app.get("/error", (c) => {
   c.var.logger.info("WOW! LOG HERE");
   throw new Error("Oh no!");
 });
+
+configureOpenAPI(app);
 
 export default app;
