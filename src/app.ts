@@ -1,11 +1,6 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
+import createApp from "@/lib/create-app";
 
-import notFound from "@/middlewares/not-found";
-import { pinoLoggerMiddleware } from "@/middlewares/pino-logger";
-
-const app = new OpenAPIHono();
-
-app.use("*", pinoLoggerMiddleware());
+const app = createApp();
 
 app.get("/", (c) => {
   return c.text("Hello Hono!");
@@ -13,8 +8,8 @@ app.get("/", (c) => {
 
 app.get("/error", (c) => {
   c.status(422);
-  return c.text("Error");
+  c.var.logger.info("WOW! LOG HERE");
+  throw new Error("Oh no!");
 });
 
-app.notFound(notFound);
 export default app;
