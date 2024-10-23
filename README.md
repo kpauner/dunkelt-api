@@ -1,13 +1,33 @@
-To install dependencies:
+# Dunkelt API
 
-```sh
-bun install
-```
+The Dunkelt API powers the backend services for the Dunkelt digital toolset, a platform for the Monster Of The Week tabletop role-playing game.
 
-To run:
+## Tech Stack
 
-```sh
-bun run dev
-```
+- **Runtime**: [Bun](https://bun.sh/)
+- **Web Framework**: [Hono](https://hono.dev/)
+- **API Documentation**: [OpenAPI](https://www.openapis.org/) & [Scalar](https://scalar.com/)
+- **Database**: [LibSQL](https://github.com/libsql/libsql)
 
-open http://localhost:3000
+## Key Features
+
+- Character management
+- Digital dice rolling (maybe)
+- Bestiary database
+- Mystery tracking
+- User authentication (currently uses authjs internally)
+- Homebrew content creation and sharing
+
+An example for a potential external API that could serve as the backbone for Dunkelt's web application, providing secure and efficient data management for Monster Of The Week enthusiasts (Currently MotW but might have to switch later).
+
+## Getting Started
+
+[Include instructions for setting up and running the API locally]
+
+## Documentation
+
+API documentation is available [link to Scalar-generated docs when ready]
+
+## Contributing
+
+[Include guidelines for contributing to the API project]

@@ -1,5 +1,6 @@
 {
   "name": "dunkelt-api",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
@@ -8,6 +9,7 @@
   },
   "dependencies": {
     "@hono/zod-openapi": "^0.16.3",
+    "@scalar/hono-api-reference": "^0.5.156",
     "hono": "^4.6.3",
     "hono-pino": "^0.4.0",
     "http-status-codes": "^2.3.0",
