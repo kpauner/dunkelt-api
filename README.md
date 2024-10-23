@@ -1,5 +1,7 @@
 # Dunkelt API
 
+![Dunkelt header](images/header-readme.png)
+
 The Dunkelt API powers the backend services for the Dunkelt digital toolset, a platform for the Monster Of The Week tabletop role-playing game.
 
 ## Tech Stack
@@ -9,14 +11,14 @@ The Dunkelt API powers the backend services for the Dunkelt digital toolset, a p
 - **API Documentation**: [OpenAPI](https://www.openapis.org/) & [Scalar](https://scalar.com/)
 - **Database**: [LibSQL](https://github.com/libsql/libsql)
 
-## Key Features
+## Current and planned Key Features
 
 - Character management
-- Digital dice rolling (maybe)
+- Digital dice rolling (planned)
 - Bestiary database
 - Mystery tracking
 - User authentication (currently uses authjs internally)
-- Homebrew content creation and sharing
+- Homebrew content creation and sharing (planned)
 
 An example for a potential external API that could serve as the backbone for Dunkelt's web application, providing secure and efficient data management for Monster Of The Week enthusiasts (Currently MotW but might have to switch later).
 
