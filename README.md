@@ -10,6 +10,7 @@ The Dunkelt API powers the backend services for the Dunkelt digital toolset, a p
 - **Web Framework**: [Hono](https://hono.dev/)
 - **API Documentation**: [OpenAPI](https://www.openapis.org/) & [Scalar](https://scalar.com/)
 - **Database**: [LibSQL](https://github.com/libsql/libsql)
+- **Object Storage**: [Cloudflare R2](https://www.cloudflare.com/products/r2/)
 
 ## Current and planned Key Features
 
