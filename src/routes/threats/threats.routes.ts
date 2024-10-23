@@ -5,9 +5,9 @@ import jsonContent from "@/openapi/helpers/json-content";
 const tags = ["Threats"];
 
 export const list = createRoute({
+  path: "/threats",
   tags,
   method: "get",
-  path: "/threats",
   responses: {
     200: jsonContent(z.object({
       threats: z.array(z.object({

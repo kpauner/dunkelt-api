@@ -29,7 +29,6 @@ const npcs = sqliteTable("npcs", {
     .default(["unknown"]),
   homebrew: integer("homebrew", { mode: "boolean" }).default(true).notNull(),
   isPublic: integer("is_public", { mode: "boolean" }).default(false).notNull(),
-  createdAt: text("created_at").notNull().default(sql`CAST((julianday('now') - 2440587.5)*86400000 AS INTEGER)`),
 });
 
 // export const npcsRelations = relations(npcs, ({ many }) => ({
