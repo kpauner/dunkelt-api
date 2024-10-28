@@ -8,7 +8,7 @@ export default function configureOpenAPI(app: AppOpenAPI) {
   app.doc("/doc", {
     openapi: "3.0.0",
     info: {
-      title: "Talenttjek Hono API",
+      title: "Dunkelt Hono API",
       version: packageJson.version,
     },
   });

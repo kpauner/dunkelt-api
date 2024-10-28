@@ -11,7 +11,7 @@ const router = createRouter()
     responses: {
       200: jsonContent(z.object({
         message: z.string().openapi({ example: "Hello Hono!" }),
-      }), "Talent Tjek API Index"),
+      }), "Dunkelt API Index"),
     },
   }), (c) => {
     return c.json({

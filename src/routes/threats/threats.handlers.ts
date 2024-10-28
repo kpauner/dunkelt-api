@@ -14,33 +14,33 @@ export const list: AppRouteHandler<ListRoute> = async (c) => {
 };
 
 export const create: AppRouteHandler<CreateRoute> = async (c) => {
-  const talent = c.req.valid("json");
-  const [inserted] = await db.insert(threats).values(talent).returning();
+  const body = c.req.valid("json");
+  const [inserted] = await db.insert(threats).values(body).returning();
   return c.json(inserted, 200);
 };
 
 export const getOne: AppRouteHandler<GetOneRoute> = async (c) => {
   const { id } = c.req.valid("param");
 
-  const talent = await db.query.threats.findFirst({
+  const data = await db.query.threats.findFirst({
     where(fields, operators) {
       return operators.eq(fields.id, id);
     },
   });
-  if (!talent) {
+  if (!data) {
     return c.json({ message: NOT_FOUND }, 404);
   }
-  return c.json(talent, 200);
+  return c.json(data, 200);
 };
 
 export const patch: AppRouteHandler<PatchRoute> = async (c) => {
   const { id } = c.req.valid("param");
   const updates = c.req.valid("json");
-  const [talent] = await db.update(threats).set(updates).where(eq(threats.id, id)).returning();
-  if (!talent) {
+  const [data] = await db.update(threats).set(updates).where(eq(threats.id, id)).returning();
+  if (!data) {
     return c.json({ message: NOT_FOUND }, 404);
   }
-  return c.json(talent, 200);
+  return c.json(data, 200);
 };
 
 export const remove: AppRouteHandler<RemoveRoute> = async (c) => {
