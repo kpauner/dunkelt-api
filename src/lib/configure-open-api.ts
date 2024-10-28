@@ -8,12 +8,13 @@ export default function configureOpenAPI(app: AppOpenAPI) {
   app.doc("/doc", {
     openapi: "3.0.0",
     info: {
-      title: "Dunkelt Hono API",
+      title: "Talenttjek Hono API",
       version: packageJson.version,
     },
   });
   app.get("reference", apiReference({
     theme: "kepler",
+    layout: "classic",
     defaultHttpClient: {
       targetKey: "javascript",
       clientKey: "axios",

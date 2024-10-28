@@ -10,13 +10,13 @@ const router = createRouter()
     path: "/",
     responses: {
       200: jsonContent(z.object({
-        message: z.string(),
-      }), "Returns a friendly greeting"),
+        message: z.string().openapi({ example: "Hello Hono!" }),
+      }), "Talent Tjek API Index"),
     },
   }), (c) => {
     return c.json({
       message: "Hello Hono!", // TRY CTRL+SPACE HERE AND GET AUTOCOMPLETE BASED ON THE CONTRACT YOU DEFINED ABOVE
-    });
+    }, 200);
   });
 
 export default router;

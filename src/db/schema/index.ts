@@ -1,2 +1,1 @@
-// export { default as items } from "./items";
-export { default as npcs } from "./npcs";
+export { default as threats } from "./threats";

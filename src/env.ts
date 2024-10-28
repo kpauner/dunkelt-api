@@ -1,19 +1,29 @@
 import { z } from "zod";
+import { config } from "dotenv";
+import { expand } from "dotenv-expand";
+import path from "node:path";
+
+expand(config({
+  path: path.resolve(
+    process.cwd(),
+    process.env.NODE_ENV === "test" ? ".env.test" : ".env",
+  ),
+}));
 
 export const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   PORT: z.coerce.number().default(9999),
-  LOG_LEVEL: z.enum(["trace", "debug", "info", "warn", "error", "fatal"]).default("info"),
+  LOG_LEVEL: z.enum(["trace", "debug", "info", "warn", "error", "fatal", "silent"]).default("info"),
   DATABASE_URL: z.string(),
-  DATABASE_AUTH_TOKEN: z.string().optional(),
-}).superRefine((input, ctx) => {
-  if (input.NODE_ENV === "production" && !input.DATABASE_AUTH_TOKEN) {
+  TURSO_AUTH_TOKEN: z.string().optional(),
+}).superRefine((data, ctx) => {
+  if (data.NODE_ENV === "production" && !data.TURSO_AUTH_TOKEN) {
     ctx.addIssue({
       code: z.ZodIssueCode.invalid_type,
       expected: "string",
       received: "undefined",
-      path: ["DATABASE_AUTH_TOKEN"],
-      message: "Must be set when NODE_ENV is 'production'",
+      path: ["TURSO_AUTH_TOKEN"],
+      message: "TURSO_AUTH_TOKEN is required in production environment",
     });
   }
 });

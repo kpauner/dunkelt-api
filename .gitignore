@@ -30,6 +30,3 @@ lerna-debug.log*
 dev.db
 test.db
 .vercel
-
-dev.db
-test.db
